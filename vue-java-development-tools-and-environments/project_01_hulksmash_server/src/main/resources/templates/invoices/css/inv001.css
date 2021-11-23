@@ -1,0 +1,112 @@
+@media print {
+    @page {
+        size: A4;
+    }
+
+    table {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    /*padding: 20px;*/
+    padding: 0;
+    font-size: 9px;
+    line-height: 130%;
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+table,
+table th,
+table td {
+    border: 0;
+}
+
+table th,
+table td {
+    padding: 8px;
+}
+
+.container {
+    padding: 10px 0;
+    width: 794px;
+    background: #fff;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.inv-header-box {
+    text-align: right;
+    vertical-align: top;
+}
+
+.inv-header {
+    width: 100%;
+    text-align: left;
+}
+
+.inv-header td {
+    padding: 3px 0 3px 0;
+}
+
+.inv-logo-box {
+    width: 60%;
+    vertical-align: top;
+}
+
+.inv-logo-box img {
+    margin-top: 2px;
+    width: 170px;
+    display: block;
+}
+
+.inv-body td, .inv-body th, .inv-footer td {
+    border: 1px solid silver;
+}
+
+.inv-body th {
+    padding: 3px 5px;
+    min-width: 8%;
+    background: #FCE9D9;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-normal {
+    font-weight: normal;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-40 {
+    width: 30%;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+h2 {
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.client-header {
+    padding: 20px 0 5px 0;
+}

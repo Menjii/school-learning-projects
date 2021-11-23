@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "mail.password",
+      "type": "java.lang.String",
+      "description": "Description for mail.password."
+  }
+] }

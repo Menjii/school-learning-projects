@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Invoice</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style class="main-style"></style>
+    <link rel="stylesheet" type="text/css" href="css/inv001.css"/>
+    <style type="text/css">
+        * {
+            font-weight: normal;
+            font-family: "Open Sans";
+            /*font-family: "Calibri";*/
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td class="inv-logo-box padding-0">
+                            PIZZERIA
+                        </td>
+                        <td class="inv-header-box padding-0">
+                            <table class="inv-header">
+                                <tr>
+                                    <td class="padding-0"><h2>Kosztorys nr <span class="invoice-id"></span></h2></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Data wystawienia:
+                                    </td>
+                                    <td class="text-bold">
+                                        <span class="date"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Data sprzedaży:
+                                    </td>
+                                    <td class="text-bold">
+                                        <span class="date"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Metoda płatności:
+                                    </td>
+                                    <td class="text-bold">
+                                        ONLINE
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="client-header">
+                            <div class="text-bold padding-0">Sprzedawca</div>
+                            Restauracja HulkSmash <br />
+                            ul. Mickiewicza 8, <br />
+                            33-100 Tarnów<br />
+                            NIP 123-456-78-89
+                        </td>
+                        <td class="client-header">
+                            <div class="text-bold padding-0">Nabywca</div>
+                            <span class="client-data"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="inv-body invoice-data">
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

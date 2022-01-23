@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3a70990122d35124b86bbdfe6a712f65
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - beep: {instanceID: 0}
+  - menuSkin: {fileID: 11400000, guid: 39f9d58095e242b4ea93e07fc8e74181, type: 2}
+  - gameLogo: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

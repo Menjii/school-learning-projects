@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>it movies</title>
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/header.css">
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script type="text/javascript">
+		function deleteMovie(clickedId) {
+
+            $.ajax({
+                url: 'http://127.0.0.1:8080/api/movies',
+                type: 'DELETE',
+                contentType: 'application/json',
+                success: function () {
+                    console.log('Movie has been deleted');
+                },
+                error: function() {
+                    $('#target').html("<b style='color: red;'>Coś poszło nie tak... Usługa nie działa dobrze :/</b>");
+                },
+                data: JSON.stringify(clickedId)
+            });
+        }
+
+		$.get('http://127.0.0.1:8080/api/movies', {}, function (data, textStatus, jqXHR) {
+
+		    console.log('data: ', data);
+    		var html = '';
+        	$.each(data, function(key, value) {
+				console.log(value.movieId)
+        	    html += '<div class="card">';
+  				html += '<img src="' + (isImage(value.image) ? value.image : getPlaceholder()) + '" alt="movie" style="width:100%">';
+  				html += '<h3>' + value.title + '</h3>';
+  				html += '<p class="title">Rok produkcji</p>';
+  				html += '<p>' + (value.year === undefined ? "????" : value.year) + '</p>';
+				html += '<p><button id="delMovie">ID: ' + value.movieId + '</button></p>';
+				html += '</div>';
+        	});
+
+        	$('#movies').html(html);
+		}).fail(function() {
+		    $('#movies').html("<div style='text-align: center; color: red;'>Mam problem z wyświetleniem danych... :/ (musisz uruchomić aplikacje za pomocą MAVEN)</div>");
+		});
+
+		function isImage(url) {
+            return url.indexOf(".jpg") !== -1 || url.indexOf(".png") !== -1;
+		}
+
+		function getPlaceholder() {
+		    return './img/placeholder.png';
+		}
+
+        $(document).ready(function() {
+            $('#add-movie').click(function() {
+                window.location.href='add-movie.html';
+            })
+        });
+
+        $(document).on('click', '#delMovie', function() {
+			const clickedId = $(this).text().replace(/ID: /i, "");
+			deleteMovie(clickedId);
+			location.reload();
+		})
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<div class="header-title">
+				<h1>Biblioteka filmów</h1>
+			</div><div class="header-button" id="add-movie">DODAJ FILM</div>
+		</header>
+
+    	<div class="movies" id="movies"></div>
+	</body>
+</html>

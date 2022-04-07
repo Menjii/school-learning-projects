@@ -1,0 +1,12 @@
+.card {
+  max-width: 18rem;
+  margin-bottom: 2rem;
+}
+
+.card-img-top img {
+  width: 100%;
+}
+
+.card-body {
+  width: 100%;
+}
